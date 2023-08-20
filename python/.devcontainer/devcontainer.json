@@ -34,17 +34,16 @@
 		// 	]
 		// }
 		// Run both shell and vscode commands- https://marketplace.visualstudio.com/items?itemName=pucelle.run-on-save
-		"onIdle.commands": {
-			"py": {
-				"enabled": true,
-				"commands": [
-					"editor.action.formatDocument",
-					"isort-formatter.run"
-					// "python.sortImports"
-				]
-			}
-		},
-		"onIdle.delay": 15000,
+		// "onIdle.commands": {
+		// 	"py": {
+		// 		"enabled": true,
+		// 		"commands": [
+		// 			"editor.action.formatDocument"
+		// 			"python.sortImports" // creates wrong code with on-idle running black together
+		// 		]
+		// 	}
+		// },
+		// "onIdle.delay": 15000,
 		"[python]": {
 			"editor.defaultFormatter": "ms-python.black-formatter"
 		},
@@ -52,10 +51,10 @@
 			"--line-length",
 			"120"
 		],
-		// "isort.args": [
-		// 	"--line-length",
-		// 	"120"
-		// ]
+		"isort.args": [
+			"--line-length",
+			"120"
+		]
 	},
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
@@ -70,8 +69,7 @@
 		"deerawan.vscode-dash",
 		"trixnz.go-to-method",
 		"gruntfuggly.on-idle",
-		// "ms-python.isort", // creates wrong code with on-idle running black together
-		"mikoz.isort-formatter",
+		"ms-python.isort",
 		"ms-python.black-formatter",
 		"trixnz.go-to-method",
 		"oliversturm.fix-json",
